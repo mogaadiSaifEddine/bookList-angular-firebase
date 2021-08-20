@@ -12,18 +12,22 @@ import { AuthService } from './services/auth.service';
 import { BooksService } from './services/books.service';
 import { AuthGuardService } from './services/auth-guard.service';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { RouterModule } from '@angular/router';
-import { HttpClientModule} from'@angular/common/http';  
+import { HttpClientModule} from'@angular/common/http';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';  
+import { SignupComponent } from './auth/signup/signup.component';
 
 
-@NgModule({
+
+
+  @NgModule({
   declarations: [
     AppComponent,
     SigninComponent,
     BookListComponent,
     SingleBookComponent,
     BookFormComponent,
-    HeaderComponent
+    HeaderComponent ,
+    SignupComponent
   ],
   
   imports: [
@@ -31,7 +35,7 @@ import { HttpClientModule} from'@angular/common/http';
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule , 
-    AppRoutingModule
+    AppRoutingModule, NgbModule
 ],
 providers: [AuthService, BooksService, AuthGuardService],
   bootstrap: [AppComponent]

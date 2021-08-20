@@ -1,1 +1,19 @@
-<p>signin works!</p>
+<div class="row">
+    <div class="col-sm-8 col-sm-offset-12">
+        <h1>se connecter pour acceder </h1>
+        <form [formGroup]='signInForm' (ngSubmit)='onSubmit()'>
+            <div class="form-group">
+                <label for ='email' class="text-primary">email</label>
+                <input type="text" class="form-control" name='email' id="email" formControlName='email'> 
+            </div>
+            <div class="form-group">
+                <label for="password" class="text-primary">password</label>
+                <input type="password"  class="form-control" id="password" name="password" formControlName='password'>
+            </div>
+            <button type="submit"  class="btn btn-primary" >se connecter</button>
+        </form>
+    
+      <h2>vous navez pas encore un compte </h2>
+      <h2 (click)='goSignUp()'>se connecter</h2>
+    </div>
+</div>

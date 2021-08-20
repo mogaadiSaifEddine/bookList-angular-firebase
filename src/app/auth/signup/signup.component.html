@@ -1,1 +1,17 @@
-<p>signup works!</p>
+<div class="row">
+    <div class="col-sm-8 col-sm-offset-2">
+        <h1>creer un nouveau compte </h1>
+        <form [formGroup]= 'signUpForm' (ngSubmit)='onSubmit()' >
+            <div class="form-group">
+                <label for ='email'>email</label>
+                <input type="text" class="form-control" name="email" id="email" formControlName="email">
+            </div>
+            <div class="form-group">
+                <label for="password">password</label>
+                <input type="text" class="form-control" name="password" id="passsword" formControlName = "password">
+            </div>
+            <button type="submit"   [disabled] = 'signUpForm.invalid'  class="btn btn-primary">submit</button>
+        </form>
+        <p style="color: aliceblue;"></p>
+    </div>
+</div>

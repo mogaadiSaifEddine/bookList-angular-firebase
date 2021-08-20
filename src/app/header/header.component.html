@@ -1,1 +1,23 @@
-<p>header works!</p>
+<nav class="navbar navbar-dafault">
+    <div class="container-fluid">
+        <ul class="nav nav-bar nav-tabs">
+            <li routerLinkActive ='active' class="nav-item">
+                <a class="nav-link"  style="color: bisque;" routerLink='books'>books</a>
+            </li>
+        </ul>
+        <ul class="nav navbar navbar-right nav-tabs">
+            <li routerLinkActive='active' class="nav-item">
+                <a class="nav-link"  style="color: bisque;" routerLink='auth/signup' >signup</a>
+                
+            </li>
+            <li routerLinkActive='active' class="nav-item">
+                <a class="nav-link"  style="color: bisque;" routerLink='auth/signin' >sigin</a>
+                
+            </li>
+            <li class="nav-item">
+                <p routerLinkActive='active' class="nav-link" (click) = 'logout()' style="color: bisque; cursor: pointer;" >logout</p>
+            </li>
+            <!--button class="btn btn-secondary" *ngIf="isAuth===true" (click) = 'logout()'> logout</button-->
+        </ul>
+    </div>
+</nav>
