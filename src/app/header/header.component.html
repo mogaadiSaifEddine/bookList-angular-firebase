@@ -7,17 +7,17 @@
         </ul>
         <ul class="nav navbar navbar-right nav-tabs">
             <li routerLinkActive='active' class="nav-item">
-                <a class="nav-link"  style="color: bisque;" routerLink='auth/signup' >signup</a>
+                <a class="nav-link"  style="color: bisque;" routerLink='auth/signup' *ngIf="!isAuth" >signup</a>
                 
             </li>
             <li routerLinkActive='active' class="nav-item">
-                <a class="nav-link"  style="color: bisque;" routerLink='auth/signin' >sigin</a>
+                <a class="nav-link"  style="color: bisque;" routerLink='auth/signin'  *ngIf="!isAuth" >sigin</a>
                 
             </li>
             <li class="nav-item">
-                <p routerLinkActive='active' class="nav-link" (click) = 'logout()' style="color: bisque; cursor: pointer;" >logout</p>
+                <p routerLinkActive='active' class="nav-link" *ngIf="isAuth" (click) = 'logout()' style="color: bisque; cursor: pointer;" >logout</p>
             </li>
-            <!--button class="btn btn-secondary" *ngIf="isAuth===true" (click) = 'logout()'> logout</button-->
+            <!--button class="btn btn-secondary"  (click) = 'logout()'> logout</button-->
         </ul>
     </div>
 </nav>

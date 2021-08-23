@@ -15,7 +15,7 @@ emitBooks(){
   this.booksSubject.next(this.books)
 }
 saveBooks(){
-  firebase.database().ref('/books').set(this.books)
+  firebase.database().ref('/books').child('books').set(this.books)
 }
 getBooks(){
   firebase.database().ref('/books').on('value' , (data)=>{
@@ -23,7 +23,7 @@ getBooks(){
     this.emitBooks()
   })
 }
-getOneBook(id : number) {
+getOneBook(id : number) : Promise<Book> {
   return new Promise((res , rej)=>{
     firebase.database().ref('/books/'+id).once('value').then(
       (data)=>{
@@ -35,7 +35,9 @@ getOneBook(id : number) {
   })
 }
 addOneBook = (book : Book)=>{
-  this.books.push(book) ; 
+  
+  this.books.push(book) ;
+  console.log(this.books); 
   this.emitBooks()
   this.saveBooks()
 
